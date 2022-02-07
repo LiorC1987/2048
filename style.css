@@ -1,0 +1,67 @@
+:root {
+    --move-har: 0px;
+    --move-ver: 0px;
+}
+
+.box {
+  position: relative;
+  z-index: 10;
+    width: 100px;
+    line-height: 100px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: auto 0;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 56px;
+    /* display: flex;
+  justify-content: center;
+  align-content: center; */
+
+}
+.column {
+    width: 500px;
+    height: 100px;
+    padding: 7px 0 7px;
+    display: flex;
+    justify-content:space-evenly;
+    font-size: 40px;
+
+}
+.game {
+  width: 500px;
+  margin: 0 auto;
+    border-radius: 10px;
+    background-color: #81d4fa;
+}
+
+.move {
+    /* width: 100px;
+    height: 100px;
+    background-color: red; */
+    position: relative;
+    animation-name: block-move;
+    animation-duration: 200ms;
+  }
+  .match {
+    animation-name: block-match;
+    animation-duration: 0.1s;
+  }
+  .pop {
+    animation-delay: 50ms;
+    position: relative;
+    animation-name: block-pop;
+    animation-duration: 200ms;
+  }
+  @keyframes block-move {
+    0%   { transform: translate(0px, 0px);}
+    100% {transform: translate(var(--move-har), var(--move-ver));}
+  }
+  @keyframes block-match {
+    0%   { width: 0%;}
+    100% { width: 100%;}
+  }
+  @keyframes block-pop {
+    0%   { transform: scale(0.1, 0.1);}
+    100% { transform: scale(1, 1);}
+  }
